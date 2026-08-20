@@ -7,6 +7,7 @@
 // @match        *://arras.io/*
 // @match        *://*.arras.io/*
 // @grant        none
+// @license      MIT
 // ==/UserScript==
 
 (function () {
@@ -654,8 +655,10 @@
             HTML.themeInput.value = defaultTheme;
             listenThemeInput(HTML.themeInput);
         });
+        setTimeout(() => {
+            document.querySelector("input[maxlength='24']").blur();
+        }, 1000)
         console.log('%c[Arras Build Loader] Ready.', 'color: #10B981; font-weight: bold;');
     };
-
     start();
 })();
